@@ -1,0 +1,75 @@
+<!-- Create a webpage using jQuery that contains three buttons to change the background 
+color of the entire page to red, blue, or green, depending on which button is clicked. 
+Additionally, add a separate button that toggles the visibility of all <div> elements on 
+the page. When the toggle button is clicked, the <div> elements should either be shown 
+or hidden based on their current visibility state. Ensure that the background color 
+change and visibility toggle functionalities work smoothly together. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q 1 </title>
+    <style>
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+      }
+
+      /* Styling for <div> elements */
+      .content-div {
+        width: 100%;
+        padding: 20px;
+        margin: 10px 0;
+        background-color: lightgray;
+        text-align: center;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Buttons to change background color -->
+    <button id="redBtn">Red</button>
+    <button id="blueBtn">Blue</button>
+    <button id="greenBtn">Green</button>
+
+    <!-- Button to toggle visibility of <div> elements -->
+    <button id="toggleBtn">Toggle Divs</button>
+
+    <!-- Div elements for demonstration -->
+    <div class="content-div">div 1</div>
+    <div class="content-div">div 2</div>
+    <div class="content-div">div 3</div>
+
+    <script>
+        $(document).ready(function() {
+          // Change background color to red
+          $("#redBtn").on("click", function() {
+            $("body").css("background-color", "red");
+          });
+    
+          // Change background color to blue
+          $("#blueBtn").on("click", function() {
+            $("body").css("background-color", "blue");
+          });
+    
+          // Change background color to green
+          $("#greenBtn").on("click", function() {
+            $("body").css("background-color", "green");
+          });
+    
+          // Toggle visibility of all <div> elements
+          $("#toggleBtn").on("click", function() {
+            $(".content-div").toggle();  // jQuery .toggle() method for show/hide
+          });
+        });
+      </script>
+  </body>
+</html>
