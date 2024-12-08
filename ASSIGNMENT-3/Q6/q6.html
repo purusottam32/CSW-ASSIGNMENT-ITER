@@ -1,0 +1,61 @@
+<!-- Write a jQuery program that lets a user apply one of two classes ('highlight' and 'dim') 
+to a <div> element by clicking two different buttons. The 'highlight' class should set the 
+background color of the <div> to yellow, while the 'dim' class should reduce the 
+opacity of the <div>. Ensure that clicking the 'Add Highlight' button applies the 
+'highlight' class, and clicking the 'Add Dim' button applies the 'dim' class, with the 
+previously applied class being removed before the new one is added.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q 6</title>
+  </head>
+  <style>
+    #mydiv{
+      width: 200px;
+      height: 100px;
+      border: 1px solid #333;
+      text-align: center;
+      line-height: 100px;
+      margin: 20px;
+      font-weight: bold;
+    }
+    .highlight{
+      background-color: yellow;
+    }
+    .dim{
+      opacity: 0.5;
+    }
+    button{
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+
+    <div id="mydiv">toggle div</div>
+    <button id="highlight">Add Highlight</button>
+    <button id="dim">Add Dim</button>
+
+    <script>
+      $(document).ready(function () {
+        $("#highlight").on("click", function () {
+          $("#mydiv").removeClass("dim").addClass("highlight");
+        });
+        $("#dim").on("click", function () {
+          $("#mydiv").removeClass("highlight").addClass("dim");
+        });
+      });
+    </script>
+  </body>
+</html>
+
