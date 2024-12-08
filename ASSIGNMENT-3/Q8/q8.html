@@ -1,0 +1,73 @@
+<!-- Create a webpage that includes a text box and a button. Write jQuery code that removes
+the element with an ID matching the text entered in the text box when the button is
+clicked. The webpage should initially contain a <div> with paragraphs, each having a
+unique ID -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Element by ID</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        .paragraphs {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        input {
+            margin: 10px 5px;
+            padding: 8px;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Remove Element by ID</h1>
+        
+        <!-- Text Box and Button -->
+        <label for="elementId">Enter the ID of the element to remove:</label>
+        <input type="text" id="elementId" placeholder="Enter ID" required>
+        <button id="removeButton">Remove Element</button>
+
+        <!-- Div with paragraphs -->
+        <div id="paragraphContainer">
+            <div id="para1" class="paragraphs">This is paragraph 1 with ID "para1".</div>
+            <div id="para2" class="paragraphs">This is paragraph 2 with ID "para2".</div>
+            <div id="para3" class="paragraphs">This is paragraph 3 with ID "para3".</div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Event listener for button click
+            $("#removeButton").click(function() {
+                // Get the entered ID from the text box
+                const elementId = $("#elementId").val();
+                
+                // Check if an element with the given ID exists
+                if ($("#" + elementId).length) {
+                    // Remove the element with the entered ID
+                    $("#" + elementId).remove();
+                    alert("Element with ID '" + elementId + "' has been removed.");
+                } else {
+                    alert("No element found with ID '" + elementId + "'.");
+                }
+
+                // Clear the text box
+                $("#elementId").val("");
+            });
+        });
+    </script>
+</body>
+</html>
