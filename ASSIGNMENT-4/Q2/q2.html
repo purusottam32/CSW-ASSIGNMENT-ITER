@@ -1,0 +1,66 @@
+<!-- Apply different Bootstrap background colors (e.g., bg-primary, bg-success, etc.) and
+text colors (e.g., text-white, text-dark, etc.) to each column created in Q1. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Grid with Colors</title>
+  <!-- Include Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* General styles for rows */
+    .custom-row {
+      border: 2px solid black;
+      background-color: lightgreen;
+      padding: 10px;
+      text-align: center;
+      margin-bottom: 10px;
+      height: 100px; /* Set a consistent height */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  
+  <!-- First Row: Two equal columns with different colors -->
+  <div class="row custom-row">
+    <div class="col-6 bg-primary text-white">First Row - Column 1</div>
+    <div class="col-6 bg-success text-white">First Row - Column 2</div>
+  </div>
+  
+  <!-- Second Row: Three equal columns with different colors -->
+  <div class="row custom-row">
+    <div class="col-4 bg-info text-white">Second Row - Column 1</div>
+    <div class="col-4 bg-warning text-dark">Second Row - Column 2</div>
+    <div class="col-4 bg-danger text-white">Second Row - Column 3</div>
+  </div>
+  
+  <!-- Third Row: Four equal columns with different colors -->
+  <div class="row custom-row">
+    <div class="col-sm-3 bg-primary text-white">Third Row - Column 1</div>
+    <div class="col-sm-3 bg-success text-white">Third Row - Column 2</div>
+    <div class="col-sm-3 bg-info text-dark">Third Row - Column 3</div>
+    <div class="col-sm-3 bg-warning text-dark">Third Row - Column 4</div>
+  </div>
+  
+  <!-- Fourth Row: Six equal columns with different colors -->
+  <div class="row custom-row">
+    <div class="col-md-2 bg-primary text-white">Fourth Row - Column 1</div>
+    <div class="col-md-2 bg-success text-white">Fourth Row - Column 2</div>
+    <div class="col-md-2 bg-info text-dark">Fourth Row - Column 3</div>
+    <div class="col-md-2 bg-warning text-dark">Fourth Row - Column 4</div>
+    <div class="col-md-2 bg-danger text-white">Fourth Row - Column 5</div>
+    <div class="col-md-2 bg-secondary text-white">Fourth Row - Column 6</div>
+  </div>
+
+</div>
+
+<!-- Include Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
