@@ -1,0 +1,104 @@
+<!-- Write code to display a popup box without using the JavaScript alert() function -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Popup Box</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        /* Overlay background */
+        #popupOverlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        /* Popup box container */
+        #popupBox {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        /* Close button */
+        #closePopup {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #f44336;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+        }
+        #closePopup:hover {
+            background-color: #d32f2f;
+        }
+        /* Button to trigger popup */
+        #showPopup {
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #showPopup:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Custom Popup Box Example</h1>
+    <button id="showPopup">Show Popup</button>
+
+    <!-- Popup Overlay -->
+    <div id="popupOverlay"></div>
+
+    <!-- Popup Box -->
+    <div id="popupBox">
+        <p>This is a custom popup box!</p>
+        <button id="closePopup">Close</button>
+    </div>
+
+    <script>
+        // Get elements
+        const popupOverlay = document.getElementById('popupOverlay');
+        const popupBox = document.getElementById('popupBox');
+        const showPopupButton = document.getElementById('showPopup');
+        const closePopupButton = document.getElementById('closePopup');
+
+        // Function to show the popup
+        showPopupButton.addEventListener('click', () => {
+            popupOverlay.style.display = 'block';
+            popupBox.style.display = 'block';
+        });
+
+        // Function to hide the popup
+        closePopupButton.addEventListener('click', () => {
+            popupOverlay.style.display = 'none';
+            popupBox.style.display = 'none';
+        });
+
+        // Close popup if overlay is clicked
+        popupOverlay.addEventListener('click', () => {
+            popupOverlay.style.display = 'none';
+            popupBox.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
