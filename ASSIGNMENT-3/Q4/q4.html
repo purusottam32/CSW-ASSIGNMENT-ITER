@@ -1,0 +1,61 @@
+<!-- Write a jQuery program with two buttons: one button labeled 'Fetch Text' to retrieve 
+and display the text content of a <p> element using an alert, and another button labeled 
+'Fetch HTML' to retrieve and display the HTML content of a <div> element using an 
+alert. -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 4</title>
+    <style>
+        .content{
+            margin: 10px;
+            padding: 5px;
+            border: 2px solid black;
+        }
+        .button{
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"
+  ></script>
+
+    <!-- pargraph and the div element  -->
+    <p class="content" id="textcontent">This is the text conetent of the "p" element</p>
+    <div class="content" id="htmlcontent">
+        <p>This is the text conetent of the "div" element</p>
+    </div>
+    
+    <button class="button" id="fetchtext">Fetch Text</button>
+    <button class="button" id="fetchhtml">Fetch HTML</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#fetchtext").on("click",function(){
+                let fetext=$("#textcontent").text();
+                alert("Text content : "+fetext);
+            })
+            $("#fetchhtml").on("click",function(){
+                let fehtml=$("#htmlcontent").html();
+                alert("Html content : "+fehtml);
+            })
+        })  
+    </script>
+</body>
+</html>                                                                         
