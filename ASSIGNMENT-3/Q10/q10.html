@@ -1,0 +1,144 @@
+<!-- Create a sign-up form with the following requirements:
+1. Users should be able to see hover states for all interactive elements on the page.
+2. An error message should be displayed when the form is submitted if:
+o Any input field is empty.
+o The email address is not formatted correctly.
+Hints:
+1. To check if a field is empty, you can use the following code
+var a = $("#fieldId").val();
+if (a == "") {
+// Field is empty
+}
+2. In HTML5, you can use the type attribute set to email to validate email addresses -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign-Up Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-group input:hover {
+            border-color: #007bff;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Sign-Up Form</h2>
+        <form id="signUpForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username">
+                <span class="error" id="usernameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                <span class="error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+                <span class="error" id="passwordError"></span>
+            </div>
+            <button type="button" id="submitButton">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#submitButton").click(function() {
+                let isValid = true;
+
+                // Clear previous error messages
+                $(".error").text("");
+
+                // Validate username
+                const username = $("#username").val();
+                if (username === "") {
+                    $("#usernameError").text("Username is required.");
+                    isValid = false;
+                }
+
+                // Validate email
+                const email = $("#email").val();
+                if (email === "") {
+                    $("#emailError").text("Email is required.");
+                    isValid = false;
+                } else if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                    $("#emailError").text("Invalid email format.");
+                    isValid = false;
+                }
+
+                // Validate password
+                const password = $("#password").val();
+                if (password === "") {
+                    $("#passwordError").text("Password is required.");
+                    isValid = false;
+                }
+
+                // If all fields are valid, submit the form
+                if (isValid) {
+                    alert("Form submitted successfully!");
+                    // You can also submit the form via AJAX or send it to a server
+                    $("#signUpForm")[0].reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
