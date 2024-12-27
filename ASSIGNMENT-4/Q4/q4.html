@@ -1,0 +1,62 @@
+<!-- Create six different types of alert boxes, each with an appropriate link, a closing button,
+and a suitable emphasized message. Add animated effects to each alert box with a 5-
+second transition effect. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Alert Bars</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h2>Alert Boxes With Animations</h2>
+        <div class="alert alert-success alert-dismissible">
+            Success!! alert box.<button class="cls-btn"></button>       
+        </div>
+
+        <div class="alert alert-info alert-dismissible">
+            info!! alert box.<button class="cls-btn"></button>       
+        </div>
+
+        <div class="alert alert-warning alert-dismissible">
+            warning!! alert box.<button class="cls-btn"></button>       
+        </div>
+
+        <div class="alert alert-danger alert-dismissible">
+            danger! alert box.<button class="cls-btn"></button>       
+        </div>
+
+        <div class="alert alert-primary alert-dismissible">
+            primary!! alert box.<button class="cls-btn"></button>       
+        </div>
+        
+        <div class="alert alert-secondary alert-dismissible">
+            secondary!! Alert box.<button class="cls-btn"></button>       
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('cls-btn').click(function(){
+                $(this).parent().fadeOut(1000);
+            });
+
+        });
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</body>
+
+</html>
